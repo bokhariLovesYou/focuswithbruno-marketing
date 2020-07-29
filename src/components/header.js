@@ -1,42 +1,53 @@
+import React, { Component } from "react"
+// Bootstrap
+import Container from "react-bootstrap/Container"
+// Styled Components
+import styled from "styled-components"
+import { LogoWrapper, LogoBox, LogoSpan, Button } from "./styledElements"
+// Link
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+const HeaderOuterWrapper = styled.div`
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+`
+const HeaderInnerWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+`
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const ButtonWrapper = styled.div``
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+export class Header extends Component {
+  render() {
+    return (
+      <>
+        <HeaderOuterWrapper>
+          <Container>
+            <HeaderInnerWrapper>
+              {/* Logo */}
+              <Link to="/">
+                <LogoWrapper>
+                  <LogoBox Inverted>
+                    <LogoSpan Inverted>fo.</LogoSpan>
+                  </LogoBox>
+                </LogoWrapper>
+              </Link>
+              {/* //Logo */}
+              {/* CTA */}
+              <ButtonWrapper>
+                <a href="https://app.focuswithbruno.com/a/login">
+                  <Button>Sign in</Button>
+                </a>
+              </ButtonWrapper>
+              {/* //CTA */}
+            </HeaderInnerWrapper>
+          </Container>
+        </HeaderOuterWrapper>
+      </>
+    )
+  }
 }
 
 export default Header

@@ -1,51 +1,34 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import React, { Component } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../styles/index.scss"
+// Components
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+// Styled Components
+import styled from "styled-components"
+const LayoutWrapper = styled.div`
+  background-color: #fff;
+  width: 100%;
+  overflow-x: hidden;
+`
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Main = styled.main`
+  @media (min-width: 768px) {
+    min-height: 100vh;
+  }
+`
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+class Layout extends Component {
+  render() {
+    const { children } = this.props
+    return (
+      <LayoutWrapper>
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
+      </LayoutWrapper>
+    )
+  }
 }
 
 export default Layout

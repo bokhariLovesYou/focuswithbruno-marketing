@@ -1,0 +1,48 @@
+$purple: #692a9a;
+$darkPurple: #55207d;
+
+body,
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  @media (min-width: 768px) {
+    overflow-x: hidden;
+  }
+  color: rgb(72, 72, 72);
+  line-height: 1.7;
+}
+
+.text-purple {
+  color: $purple;
+}
+
+.light {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: $purple;
+  font-weight: 600;
+  &:hover {
+    color: $darkPurple;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.border-radius {
+  border-radius: 4px;
+}
+
+.box-shadow {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.075), 0 1px 4px rgba(0, 0, 0, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.06);
+}
