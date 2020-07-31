@@ -25,6 +25,11 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  let canonicalURL
+  if (typeof window !== "undefined") {
+    canonicalURL = window.location.href
+  }
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -68,7 +73,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="canonical" href={canonicalURL} />
+    </Helmet>
   )
 }
 

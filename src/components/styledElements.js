@@ -1,4 +1,12 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+// Mixins
+const VerticallyCenetered = `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 export const LogoWrapper = styled.div`
   max-width: ${props => (props.MW400 ? "400px" : "")};
@@ -43,6 +51,13 @@ export const Button = styled.button`
 
 export const Section = styled.section`
   padding: 4rem 0;
+  min-height: ${props => (props.MinHeight ? "70vh" : "")};
+  ${props =>
+    props.VerticallyCentered
+      ? css`
+          ${VerticallyCenetered}
+        `
+      : ""}
 `
 
 export const LargeHeading = styled.h1`

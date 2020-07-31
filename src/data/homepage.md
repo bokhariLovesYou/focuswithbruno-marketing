@@ -1,6 +1,6 @@
 ---
 path: /
-title: Manage your day like a boss! | Focus With Bruno
+title: Manage your day like a boss!
 description: Manage your day like a boss for FREE! A simple To-do list to plan your priorities!
 template: HomepageTemplate
 # Page Content
