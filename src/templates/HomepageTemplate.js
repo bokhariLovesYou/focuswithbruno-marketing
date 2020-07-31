@@ -16,7 +16,6 @@ export class HomepageTemplate extends Component {
   render() {
     const { frontmatter } = this.props.data.pageData
     const { hero } = frontmatter
-    console.log(hero)
     return (
       <Layout>
         <SEO title={frontmatter.title} description={frontmatter.description} />
